@@ -6,6 +6,7 @@ import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import axios from 'axios';
+import config from './config';
 import { 
   Code2, 
   Copy, 
@@ -54,7 +55,7 @@ console.log(calculateFibonacci(10));`);
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/api/get-review', { code });
+      const response = await axios.post(`${config.API_URL}/api/get-review`, { code });
       setReview(response.data);
       simulateTypingEffect(response.data);
     } catch (error) {
