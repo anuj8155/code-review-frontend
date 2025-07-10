@@ -54,7 +54,7 @@ console.log(calculateFibonacci(10));`);
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/api/get-review', { code });
+      const response = await axios.post('https://code-review-backend-roan.vercel.app/api/get-review', { code });
       setReview(response.data);
       simulateTypingEffect(response.data);
     } catch (error) {
